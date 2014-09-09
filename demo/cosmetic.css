@@ -1,0 +1,260 @@
+/* Basic styles for a general ambiancé for the demo.
+   You don't need these styles at all - so scram! :) */
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #1abc9c;
+  color: #fff;
+  font-family: "Futura", sans-serif;
+  padding: 5% 10%;
+}
+
+.fork {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.view-source {
+  background: rgba(255,255,255,.25);
+  border: 2px solid rgba(255,255,255,.5);
+  border-radius: 100px;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: 15px;
+  padding: 10px 15px;
+}
+
+.view-source:hover {
+  background: rgba(0,0,0,.15);
+  border-color: rgba(0,0,0,.3);
+}
+
+.view-source:active {
+  opacity: .8;
+}
+
+h1 em, h2 {
+  color: rgba(255,255,255,.5);
+  font-size: 14px;
+}
+
+h1 {
+  color: rgba(0,0,0,.25);
+  text-transform: uppercase;
+}
+
+h1 em {
+  font-weight: 300;
+  margin-left: 5px;
+  text-transform: lowercase;
+}
+
+h1 em a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 em a:hover {
+  text-decoration: underline;
+}
+
+fieldset {
+  border: 1px solid rgba(255,255,255,.5);
+  margin: 30px 0;
+  padding: 15px;
+}
+
+legend {
+  color: rgba(255,255,255,.5);
+  margin: 0 10px;
+}
+
+label {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+input {
+  font-family: inherit;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button {
+/* Remove ⊗ so we can do our own in CSS below,
+   because Chrome's ⊗ causes unusual padding and Firefox's
+   implementation of input[type=search] doesn't even have a ⊗. */
+  -webkit-appearance: none;
+}
+
+input[type=search] {
+  background: #eee;
+  border: 2px solid #c7c7c7;
+  border-radius: 10px;
+  color: #333;
+  opacity: 0;
+  font-size: 20px;
+  height: 40px;
+  padding: 3px 17px;
+  position: relative;
+  transition: background .1s ease-in-out, padding .1s ease-in-out, border .1s ease-in, box-shadow .1s ease-in, opacity .1s ease-in, visibility .1s ease-in;
+  visibility: hidden;
+  width: calc(100% - 40px);
+  z-index: 2;
+}
+
+input[type=search].show {
+  opacity: 1;
+  visibility: visible;
+}
+
+input[type=search]:focus {
+  background: #fff;
+  border-color: green;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+  outline: none;
+}
+
+ul {
+  border-top: rgba(0,0,0,0.25) 5px solid;
+  list-style: none;
+  margin: 30px 0 15px;
+  padding: 0;
+}
+
+li {
+  border-bottom: rgba(0,0,0,0.25) 5px solid;
+}
+
+h2 {
+  margin: 0 30px;
+}
+
+li img, h2 {
+  display: inline-block;
+}
+
+li img {
+  border: 0;
+  height: 148px;
+  width: 100px;
+}
+
+h2 em {
+  color: #fff;
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.score {
+  color: #ccc;
+}
+
+li a {
+  color: #fff;
+  display: block;
+  padding: 30px;
+}
+
+li a:hover {
+  background: rgba(255,255,255,.25);
+}
+
+li a:hover h2 {
+  color: rgba(255,255,255,.75);
+}
+
+li a:hover h2 em {
+  color: rgba(0,0,0,.75);
+}
+
+li a:hover .score {
+  color: #ddd;
+}
+
+dl, .synopsis {
+  font: 400 14px/18px "Helvetica Neue", Helvetica, sans-serif;
+}
+
+dl {
+  margin: 15px 0;
+}
+
+dt {
+  color: #ddd;
+  font-weight: 300;
+  float: left;
+}
+
+dt:after {
+  content: ":\00a0";
+}
+
+dd {
+  color: #eee;
+  font-weight: 500;
+  margin: 0;
+}
+
+li a:hover dt {
+  color: #eee;
+}
+
+li a:hover dd {
+  color: #fff;
+}
+
+.synopsis {
+  clear: left;
+  color: #333;
+}
+
+li a:hover .synopsis {
+  color: #111;
+}
+
+@media (max-width: 599px) {
+  .view-source {
+    float: none;
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 10px;
+    position: static;
+  }
+
+  h1 em, h2, li img {
+    display: block;
+  }
+
+  h1 em {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 em {
+    font-size: 18px;
+  }
+
+  h2 {
+    margin: 10px 0 0;
+  }
+
+  label {
+    display: block;
+  }
+}
